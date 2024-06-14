@@ -7,7 +7,7 @@ const app =express() ;
 app.use(express.json()) ;
 
 app.get("/",(req ,res)=>{
-    res.send("hello")
+    res.send("hello world")
 })
 app.use("/user",userRoute) ;
 app.use(tokenV)
