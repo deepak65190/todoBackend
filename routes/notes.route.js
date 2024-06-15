@@ -2,16 +2,42 @@ const express=require("express") ;
 const {notesModel}=require("../models/notes.model") ;
 const notesRoute=express.Router() ;
 
-notesRoute.get("/",async(req,res)=>{
-    try{
-        const notes=await notesModel.find() ;
-        res.send(notes)
-    }catch(err){
-        res.status(404).send("no data found")
-    }
-    
 
-}) 
+
+// Get all notes or search notes with pagination
+notesRoute.get("/", async (req, res) => {
+  const { title, page = 1, limit = 4 ,sortby="asc" } = req.query; // Default page is 1 and limit is 10
+
+  // Build the search query object
+ let searchQuery={}
+  if (title) {
+    searchQuery.title = { $regex: title, $options: "i" }; // Case-insensitive search
+  }
+
+  try {
+    // Find notes based on the search query with pagination
+    const notes = await notesModel.find(searchQuery)
+      .skip((page - 1) * limit)
+      .limit(parseInt(limit)).sort({ title: sortby === "desc" ? -1 : 1 })
+
+    // Get the total count of documents that match the search query
+    const totalNotes = await notesModel.countDocuments(searchQuery);
+
+    res.send({
+       notes ,
+       totalNotes,
+       currentPage: parseInt(page),
+       totalPages: Math.ceil(totalNotes / limit)
+    });
+  } catch (err) {
+    res.status(404).send("No data found");
+  }
+});
+
+
+
+
+
 
 //create notes
 notesRoute.post("/create" ,async(req,res)=>{
