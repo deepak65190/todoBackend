@@ -43,6 +43,13 @@ TodoBackend is a simple backend application that provides endpoints for user aut
     ```
     Authorization: Bearer <token>
     ```
+- **Query Parameters:**
+    - **page:** (optional, default: 1): The page number to retrieve.
+    - **limit:** (optional, default: 10): The number of notes per page.
+    - **search:** (optional): Search notes by title.
+    - **sort:** (optional, default: asc): Sort notes by title in ascending (asc) or descending (desc) order.
+  
+  ```GET /notes?page=2&limit=5&title=meeting&sortby=desc```
 
 - **Create Note**
   - **Endpoint:** `/notes/create`
