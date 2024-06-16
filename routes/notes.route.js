@@ -6,7 +6,7 @@ const notesRoute=express.Router() ;
 
 // Get all notes or search notes with pagination
 notesRoute.get("/", async (req, res) => {
-  const { title, page = 1, limit = 4 ,sortby="asc" } = req.query; // Default page is 1 and limit is 10
+  const { title, page = 1, limit = 10 ,sortby="asc" } = req.query; // Default page is 1 and limit is 10
 
   // Build the search query object
  let searchQuery={}
