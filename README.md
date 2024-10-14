@@ -41,7 +41,7 @@ TodoBackend is a simple backend application that provides endpoints for user aut
   - **Description:** Retrieve all notes for the authenticated user.
   - **Headers:**
     ```
-    Authorization: Bearer <token>
+    auth: token
     ```
 - **Query Parameters:**
     - **page:** (optional, default: 1): The page number to retrieve.
@@ -57,13 +57,13 @@ TodoBackend is a simple backend application that provides endpoints for user aut
   - **Description:** Create a new note.
   - **Headers:**
     ```
-    Authorization: Bearer <token>
+     auth: token
     ```
   - **Request Body:**
     ```json
     {
       "title": "Sample Note",
-      "content": "This is a sample note.",
+      "notes": "This is a sample note.",
     "category": "notes"
     }
     ```
@@ -74,14 +74,14 @@ TodoBackend is a simple backend application that provides endpoints for user aut
   - **Description:** Update an existing note.
   - **Headers:**
     ```
-    Authorization: Bearer <token>
+     auth: token
     ```
   - **Request Body:**
     ```json
     {
       "id": "note_id",
       "title": "Updated Note Title",
-      "content": "Updated content of the note."
+      "notes": "Updated content of the note."
     }
     ```
 
@@ -91,7 +91,7 @@ TodoBackend is a simple backend application that provides endpoints for user aut
   - **Description:** Delete an existing note.
   - **Headers:**
     ```
-    Authorization: Bearer <token>
+    auth: token
     ```
   - **Request Body:**
     ```json
