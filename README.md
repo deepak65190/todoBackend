@@ -63,7 +63,8 @@ TodoBackend is a simple backend application that provides endpoints for user aut
     ```json
     {
       "title": "Sample Note",
-      "content": "This is a sample note."
+      "content": "This is a sample note.",
+    "category": "notes"
     }
     ```
 
