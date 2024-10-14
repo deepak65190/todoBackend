@@ -79,7 +79,7 @@ TodoBackend is a simple backend application that provides endpoints for user aut
   - **Request Body:**
     ```json
     {
-      "id": "note_id",
+      "id": "note_id",//through params
       "title": "Updated Note Title",
       "notes": "Updated content of the note."
     }
@@ -96,7 +96,7 @@ TodoBackend is a simple backend application that provides endpoints for user aut
   - **Request Body:**
     ```json
     {
-      "id": "note_id"
+      "id": "note_id" //through params
     }
     ```
 
