@@ -9,7 +9,7 @@ TodoBackend is a simple backend application that provides endpoints for user aut
 ### Authentication
 
 - **Login**
-  - **Endpoint:** `/login`
+  - **Endpoint:** `user/login`
   - **Method:** `POST`
   - **Description:** Authenticate a user with email and password.
   - **Request Body:**
@@ -21,7 +21,7 @@ TodoBackend is a simple backend application that provides endpoints for user aut
     ```
 
 - **Signup**
-  - **Endpoint:** `/register`
+  - **Endpoint:** `user/register`
   - **Method:** `POST`
   - **Description:** Register a new user.
   - **Request Body:**
