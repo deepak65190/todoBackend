@@ -152,6 +152,4 @@ bisht65190@gmail.com
 
 Project Link: https://todobackend-eb7k.onrender.com
 
----
 
-Feel free to customize the placeholders with your actual information. This README format provides a clear and structured presentation of your project's endpoints, setup instructions, and other essential details.
